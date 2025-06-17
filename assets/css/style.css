@@ -77,6 +77,7 @@ i{
 /* ------- BASE -------- */
 body{
     background: var(--body-color);
+    /* Remove this line: padding-top: 90px; */
 }
 .container{
     width: 100%;
@@ -86,16 +87,51 @@ body{
 /* ----- NAVIGATION BAR ----- */
 nav{
     position: fixed;
+    top: 0;
     display: flex;
     justify-content: space-between;
     width: 100%;
-    height: 90px;
-    line-height: 90px;
-    background: var(--body-color);
+    height: 90px !important;
+    line-height: 90px !important;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    backdrop-filter: blur(10px); /* Add blur effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
     padding-inline: 9vw;
-    transition: .3s;
+    transition: none;
     z-index: 100;
+    box-shadow: none !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Subtle border */
 }
+
+/* Override any scroll-based changes */
+nav.scrolled,
+nav:hover,
+nav.sticky {
+    height: 90px !important;
+    line-height: 90px !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    box-shadow: none !important;
+    transition: none !important;
+}
+
+/* Dark mode navigation background fix */
+body.dark-mode nav {
+    background: rgba(17, 17, 17, 0.9) !important; /* Dark semi-transparent */
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+body.dark-mode nav.scrolled,
+body.dark-mode nav:hover,
+body.dark-mode nav.sticky {
+    background: rgba(17, 17, 17, 0.9) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+}
+
 .nav-logo{
    position: relative;
 }
@@ -153,6 +189,7 @@ nav{
 /* ----- WRAPPER DESIGN ----- */
 .wrapper{
     padding-inline: 10vw;
+    padding-top: 90px; /* Move padding here instead of body */
 }
 
 /* ----- FEATURED BOX ----- */
@@ -221,6 +258,7 @@ nav{
     border-radius: 50%;
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
     cursor: pointer;
+    border: 2px solid #222; /* Add explicit border */
 }
 .icon:hover{
     color: var(--first-color);
@@ -635,5 +673,166 @@ footer{
     }
     .input-field{
         width: 100%;
+    }
+}
+
+/* Theme Toggle Button Styles - adjust positioning */
+#theme-toggle {
+  position: fixed;
+  top: calc(45px - 22px); /* Center with navbar (90px/2 - button-height/2) */
+  right:100px;
+  z-index: 9999;
+  background: #f5f5f5;
+  color: #222;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s;
+  font-size: 1.4rem;
+}
+#theme-toggle:hover {
+  background: #e0e0e0;
+}
+
+/* Light Theme (default) */
+body {
+  background: #fff;
+  color: #222;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Dark Theme */
+body.dark-mode {
+  background: #111;
+  color: #f5f5f5;
+}
+body.dark-mode .container,
+body.dark-mode nav,
+body.dark-mode .section,
+body.dark-mode footer {
+  background: transparent;
+  color: #f5f5f5;
+}
+body.dark-mode .btn {
+  background: #222;
+  color: #f5f5f5;
+  border: 1px solid #444;
+}
+body.dark-mode .btn.blue-btn {
+  background: #1976d2;
+  color: #fff;
+}
+body.dark-mode .nav-menu,
+body.dark-mode .nav-logo,
+body.dark-mode .nav-button,
+body.dark-mode .nav-menu-btn,
+body.dark-mode .featured-box,
+body.dark-mode .project-box,
+body.dark-mode .skills-box,
+body.dark-mode .about-info,
+body.dark-mode .form-control,
+body.dark-mode .footer-menu,
+body.dark-mode .footer-social-icons {
+  background: transparent;
+  color: #f5f5f5;
+}
+body.dark-mode input,
+body.dark-mode textarea {
+  background: #222;
+  color: #f5f5f5;
+  border: 1px solid #444;
+}
+body.dark-mode .icon i {
+  color: #f5f5f5;
+}
+body.dark-mode #theme-toggle {
+  background: #222;
+  color: #f5f5f5;
+}
+
+/* Add these dark mode rules for text and icon fixes */
+/* Dark Theme text fixes */
+body.dark-mode h1,
+body.dark-mode h2, 
+body.dark-mode h3,
+body.dark-mode p,
+body.dark-mode .nav-name,
+body.dark-mode .footer_menu_list a,
+body.dark-mode .featured-name,
+body.dark-mode .featured-text-info,
+body.dark-mode .top-header h1,
+body.dark-mode .about-info p,
+body.dark-mode .project-box label,
+body.dark-mode .skills-header h3,
+body.dark-mode .nav-link,
+body.dark-mode span:not(.typedText) {
+    color: #f5f5f5 !important;
+}
+
+/* Dark Theme icon fixes */
+body.dark-mode .icon {
+    border-color: #f5f5f5;
+    box-shadow: 0px 2px 5px 0px rgba(255, 255, 255, 0.1);
+}
+
+/* Fix for project boxes background in dark mode */
+body.dark-mode .project-box,
+body.dark-mode .about-info {
+    background: #1a1a1a;
+}
+
+/* Ensure scroll button is visible in dark mode */
+body.dark-mode .scroll-btn {
+    background: #222;
+    color: #f5f5f5;
+}
+
+/* Fix footer in dark mode */
+body.dark-mode footer {
+    background: #1a1a1a;
+}
+
+/* Add these styles to your CSS file */
+#theme-toggle {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1000;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+/* Theme toggle button positioning */
+#theme-toggle {
+    margin-right: 60px; /* Adds space between theme toggle and menu button */
+}
+
+/* Media query for mobile screens */
+@media screen and (max-width: 768px) {
+    #theme-toggle {
+        margin-right: 50px; /* Slightly reduced margin on smaller screens */
+    }
+    
+    .nav-menu-btn {
+        position: relative;
+        z-index: 100; /* Ensures menu button stays above other elements */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #theme-toggle {
+        margin-right: 45px; /* Further reduced margin on very small screens */
     }
 }
