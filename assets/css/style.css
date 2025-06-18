@@ -836,3 +836,397 @@ body.dark-mode footer {
         margin-right: 45px; /* Further reduced margin on very small screens */
     }
 }
+
+
+/* ----- POPPINS FONT Link ----- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* ----- VARIABLES ----- */
+:root {
+    --body-color: rgb(255, 255, 255);
+    --color-white: rgb(255, 255, 255);
+    --text-color-second: rgb(68, 68, 68);
+    --text-color-third: rgb(30, 159, 171);
+    --first-color: rgb(110, 87, 224);
+    --first-color-hover: rgb(40, 91, 212);
+    --second-color: rgb(0, 201, 255);
+    --third-color: rgb(192, 166, 49);
+    --first-shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* ----- BASE ----- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: var(--body-color);
+    color: var(--text-color-second);
+    transition: background 0.3s, color 0.3s;
+    padding: 2rem 0;
+    min-height: 100vh;
+}
+
+/* ----- ABOUT SECTION ----- */
+.about-section {
+    padding: 5rem 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 100%;
+}
+
+/* ----- ABOUT HEADER ----- */
+.about-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.about-header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-color-second);
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.header-line {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(45deg, var(--first-color), var(--second-color));
+    margin: 0 auto;
+    border-radius: 2px;
+    position: relative;
+}
+
+.header-line::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: var(--third-color);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 0 4px var(--body-color);
+}
+
+/* ----- ABOUT CONTENT ----- */
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+/* ----- ABOUT TEXT SECTION ----- */
+.about-text-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.about-card {
+    background: var(--color-white);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px var(--first-shadow-color);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(110, 87, 224, 0.1);
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+
+.about-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(45deg, var(--first-color), var(--second-color));
+    border-radius: 20px 20px 0 0;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(110, 87, 224, 0.15);
+}
+
+.card-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, var(--first-color), var(--second-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem auto;
+    box-shadow: 0 5px 15px rgba(110, 87, 224, 0.3);
+}
+
+.card-icon i {
+    font-size: 1.8rem;
+    color: var(--color-white);
+}
+
+.about-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-color-second);
+    margin-bottom: 1rem;
+}
+
+.about-card p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #777;
+    margin-bottom: 1.2rem;
+}
+
+.about-card p:last-child {
+    margin-bottom: 0;
+}
+
+/* ----- SKILLS SECTION ----- */
+.skills-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.skills-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.skills-header h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-color-second);
+    margin-bottom: 0.5rem;
+}
+
+.skills-header p {
+    font-size: 1rem;
+    color: #777;
+}
+
+/* ----- SKILLS GRID ----- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem 0;
+}
+
+.skill-item {
+    background: var(--color-white);
+    padding: 1.5rem 1rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px var(--first-shadow-color);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(110, 87, 224, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, var(--first-color), var(--second-color));
+    opacity: 0.05;
+    transition: left 0.3s ease;
+}
+
+.skill-item:hover::before {
+    left: 0;
+}
+
+.skill-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(110, 87, 224, 0.2);
+}
+
+.skill-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(45deg, var(--first-color), var(--second-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem auto;
+    transition: transform 0.3s ease;
+}
+
+.skill-item:hover .skill-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.skill-icon i {
+    font-size: 1.5rem;
+    color: var(--color-white);
+}
+
+.skill-name {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-color-second);
+    position: relative;
+    z-index: 1;
+}
+
+/* ----- THEME TOGGLE ----- */
+#theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    background: #f5f5f5;
+    color: #222;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s;
+    font-size: 1.4rem;
+}
+
+#theme-toggle:hover {
+    background: #e0e0e0;
+}
+
+/* ----- DARK MODE ----- */
+body.dark-mode {
+    --body-color: #111;
+    --color-white: #1a1a1a;
+    --text-color-second: #f5f5f5;
+    --first-shadow-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .about-card {
+    background: #1a1a1a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .skill-item {
+    background: #1a1a1a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .about-card p,
+body.dark-mode .skills-header p {
+    color: #ccc;
+}
+
+body.dark-mode .header-line::after {
+    box-shadow: 0 0 0 4px #111;
+}
+
+body.dark-mode #theme-toggle {
+    background: #222;
+    color: #f5f5f5;
+}
+
+body.dark-mode #theme-toggle:hover {
+    background: #333;
+}
+
+/* ----- RESPONSIVE DESIGN ----- */
+@media screen and (max-width: 768px) {
+    .about-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .about-card {
+        padding: 2rem;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 1rem;
+    }
+    
+    .skill-item {
+        padding: 1.2rem 0.8rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .about-container {
+        padding: 0 1rem;
+    }
+    
+    .about-header h1 {
+        font-size: 2rem;
+    }
+    
+    .about-card {
+        padding: 1.5rem;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .card-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .card-icon i {
+        font-size: 1.5rem;
+    }
+    
+    .skill-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .skill-icon i {
+        font-size: 1.2rem;
+    }
+}
+/* ADD THIS NEW CSS RULE for skill logos */
+.skill-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+/* MODIFY the existing .skill-icon rule - remove the gradient background */
+.skill-icon {
+    width: 50px;
+    height: 50px;
+    background: transparent; /* Changed from gradient to transparent */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem auto;
+    transition: transform 0.3s ease;
+}
