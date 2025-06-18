@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- --------- UNICONS ---------- -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <!-- --------- CSS ---------- -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
+    <!-- --------- FAVICON ---------- -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <title>Contact | Ludiflex</title>
+</head>
+<body>
+    <div class="container">
+        <!-- --------------- HEADER --------------- -->
+        <nav id="header">
+            <div class="nav-logo">
+                <p class="nav-name">Doe</p>
+                <span>.</span>
+            </div>
+            <div class="nav-menu" id="myNavMenu">
+                <ul class="nav_menu_list">
+                    <li class="nav_list">
+                        <a href="index.html" class="nav-link">Home</a>
+                        <div class="circle"></div>
+                    </li>
+                    <li class="nav_list">
+                        <a href="index.html#about" class="nav-link">About</a>
+                        <div class="circle"></div>
+                    </li>
+                    <li class="nav_list">
+                        <a href="projects.html" class="nav-link">Projects</a>
+                        <div class="circle"></div>
+                    </li>
+                    <li class="nav_list">
+                        <a href="contact.html" class="nav-link active-link">Contact</a>
+                        <div class="circle"></div>
+                    </li>
+                </ul>
+            </div>
+            <button id="theme-toggle" aria-label="Toggle dark mode">
+                <i class="uil uil-moon"></i>
+            </button>
+            <div class="nav-button">
+                <button class="btn">Download CV <i class="uil uil-file-alt"></i></button>
+            </div>
+            <div class="nav-menu-btn">
+                <i class="uil uil-bars" onclick="myMenuFunction()"></i>
+            </div>
+        </nav>
+
+        <!-- -------------- MAIN ---------------- -->
+        <main class="wrapper">
+            <!-- -------------- CONTACT HERO ---------------- -->
+            <section class="contact-hero">
+                <div class="hero-content">
+                    <h1>Let's Connect</h1>
+                    <p>I'd love to hear from you! Whether you have a project in mind, want to discuss opportunities, or just want to say hello.</p>
+                </div>
+            </section>
+
+            <!-- -------------- CONTACT METHODS ---------------- -->
+            <section class="contact-methods">
+                <div class="contact-grid">
+                    <!-- Email Card -->
+                    <div class="contact-card">
+                        <div class="card-icon">
+                            <i class="uil uil-envelope"></i>
+                        </div>
+                        <h3>Email Me</h3>
+                        <p>Drop me a line anytime</p>
+                        <a href="mailto:john@test.com" class="contact-link">john@test.com</a>
+                    </div>
+
+                    <!-- GitHub Card -->
+                    <div class="contact-card">
+                        <div class="card-icon">
+                            <i class="uil uil-github-alt"></i>
+                        </div>
+                        <h3>GitHub</h3>
+                        <p>Check out my code</p>
+                        <a href="https://github.com/johndoe" target="_blank" class="contact-link">@johndoe</a>
+                    </div>
+
+                    <!-- Instagram Card -->
+                    <div class="contact-card">
+                        <div class="card-icon">
+                            <i class="uil uil-instagram"></i>
+                        </div>
+                        <h3>Instagram</h3>
+                        <p>Behind the scenes</p>
+                        <a href="https://instagram.com/johndoe" target="_blank" class="contact-link">@johndoe</a>
+                    </div>
+
+                    <!-- LinkedIn Card -->
+                    <div class="contact-card">
+                        <div class="card-icon">
+                            <i class="uil uil-linkedin-alt"></i>
+                        </div>
+                        <h3>LinkedIn</h3>
+                        <p>Professional network</p>
+                        <a href="https://linkedin.com/in/johndoe" target="_blank" class="contact-link">John Doe</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- -------------- CONTACT FORM ---------------- -->
+            <section class="contact-form-section">
+                <div class="form-container">
+                    <div class="form-header">
+                        <h2>Send Me a Message</h2>
+                        <p>Please verify your identity to help me maintain a safe communication environment</p>
+                    </div>
+                    
+                    <div class="identity-notice">
+                        <div class="notice-icon">
+                            <i class="uil uil-shield-check"></i>
+                        </div>
+                        <div class="notice-content">
+                            <h4>Identity Verification Required</h4>
+                            <p>To prevent spam and ensure secure communication, please include your professional email or LinkedIn profile in your message. Messages without proper identification may not receive a response.</p>
+                        </div>
+                    </div>
+
+                    <form class="contact-form" action="#" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="verification">Verification (LinkedIn/Company Email/Portfolio) *</label>
+                            <input type="url" id="verification" name="verification" placeholder="https://linkedin.com/in/yourprofile or your professional details" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="6" required placeholder="Tell me about your project, inquiry, or how I can help you..."></textarea>
+                        </div>
+                        
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="agree" name="agree" required>
+                            <label for="agree">I confirm that the information provided is accurate and I understand that verification is required for security purposes.</label>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            Send Message <i class="uil uil-message"></i>
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- -------------- ADDITIONAL INFO ---------------- -->
+            <section class="additional-info">
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="uil uil-clock"></i>
+                        </div>
+                        <h4>Response Time</h4>
+                        <p>I typically respond within 24-48 hours during business days</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="uil uil-globe"></i>
+                        </div>
+                        <h4>Time Zone</h4>
+                        <p>Pacific Standard Time (PST/PDT)</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="uil uil-briefcase"></i>
+                        </div>
+                        <h4>Availability</h4>
+                        <p>Open to freelance projects and collaboration opportunities</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- --------------- FOOTER --------------- -->
+        <footer>
+            <div class="top-footer">
+                <p>John Doe .</p>
+            </div>
+            <div class="middle-footer">
+                <ul class="footer-menu">
+                    <li class="footer_menu_list">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="footer_menu_list">
+                        <a href="index.html#about">About</a>
+                    </li>
+                    <li class="footer_menu_list">
+                        <a href="projects.html">Projects</a>
+                    </li>
+                    <li class="footer_menu_list">
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-social-icons">
+                <div class="icon"><a href="mailto:ynp2@sfu.ca"><i class="uil uil-envelope"></i></a></div>
+                <div class="icon"><a href="https://github.com/johndoe" target="_blank"><i class="uil uil-github-alt"></i></a></div>
+                <div class="icon"><a href="https://instagram.com/johndoe" target="_blank"><i class="uil uil-instagram"></i></a></div>
+                <div class="icon"><a href="https://linkedin.com/in/johndoe" target="_blank"><i class="uil uil-linkedin-alt"></i></a></div>
+            </div>
+            <div class="bottom-footer">
+                <p>Copyright &copy; <a href="index.html" style="text-decoration: none;">John Doe</a> - All rights reserved</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- ----- MAIN JS ----- -->
+    <script src="assets/js/main.js"></script>
+    <!-- ----- CONTACT JS ----- -->
+    <script src="assets/js/contact.js"></script>
+
+    <script>
+        // Theme toggle logic
+        const toggleBtn = document.getElementById('theme-toggle');
+        const icon = toggleBtn.querySelector('i');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && prefersDark)) {
+            document.body.classList.add('dark-mode');
+            icon.classList.remove('uil-moon');
+            icon.classList.add('uil-sun');
+        }
+        
+        toggleBtn.onclick = function() {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            icon.classList.toggle('uil-moon', !isDark);
+            icon.classList.toggle('uil-sun', isDark);
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        };
+
+        // Mobile menu function (if you have it in main.js)
+        function myMenuFunction() {
+            var menuBtn = document.getElementById("myNavMenu");
+            if(menuBtn.className === "nav-menu"){
+                menuBtn.className += " responsive";
+            } else {
+                menuBtn.className = "nav-menu";
+            }
+        }
+    </script>
+</body>
+</html>
