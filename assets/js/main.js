@@ -34,7 +34,7 @@
 /* ----- TYPING EFFECT ----- */
 /* this will create a typing effect for the text in the home section */
    var typingEffect = new Typed(".typedText",{
-      strings : ["Designer","Youtuber","Developer"],
+      strings : ["Designer","Researcher","Developer"],
       loop : true,
       typeSpeed : 100, 
       backSpeed : 80,
