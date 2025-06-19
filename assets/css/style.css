@@ -260,7 +260,7 @@ body.dark-mode nav.sticky {
 }
 .social_icons{
     display: flex;
-    margin-top: 5em;
+    margin-top: 3em;
     gap: 30px;
 }
 .icon{
